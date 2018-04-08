@@ -1,0 +1,9 @@
+
+启动websocket，接收来自ffmpeg串流的结果
+node websocket_relay.js 404 8082 8084
+
+启动网页服务器
+supervisor ./bin/www
+
+ffmpeg进行串流，将rtsp转到http
+ffmpeg -i "rtsp://admin:12345@192.168.1.50:554/h264/ch1/main/stream" -f mpegts -codec:v mpeg1video -bf 0 -codec:a mp2 -r 25 "http://localhost:8082/404/1920/1080/"
