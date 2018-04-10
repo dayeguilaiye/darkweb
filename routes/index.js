@@ -10,6 +10,16 @@ router.get('/upload', function(req, res, next) {
   res.render("upload");
 });
 
+router.get('/cameras', function(req, res, next) {
+  var cameras = [
+    {"name":"东门","ip":"192.168.233.233","status":"完全毁坏"},
+    {"name":"北门","ip":"192.168.404.404","status":"好的不行"},
+    {"name":"南门","ip":"192.168.40.40","status":"被遮盖"},
+    {"name":"机密要地","ip":"404.404.404.404","status":"极度清晰"}
+  ]
+  res.send(cameras);
+});
+
 // app.post('/uploadPic', function (req, res) {
 
 //   console.log(req.files[0]);  // 上传的文件信息
