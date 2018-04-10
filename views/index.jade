@@ -26,6 +26,8 @@ html(lang="en")
   script.
     var trString = '<tr><td><input type="checkbox",name="checker"></td><td></td><td></td><td></td></tr>'
     $(function(){
+
+      //- 从服务器取得摄像头列表及其运维状况，添加到table中。
       $.get(
         "./cameras",
         function(data){

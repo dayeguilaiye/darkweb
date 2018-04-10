@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var mysql      = require('mysql');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -11,6 +12,22 @@ router.get('/upload', function(req, res, next) {
 });
 
 router.get('/cameras', function(req, res, next) {
+  // var connection = mysql.createConnection({
+  //   host     : 'www.hitnrun.cn',
+  //   user     : 'root',
+  //   password : '404',
+  //   port     : '3306',
+  //   database : 'darkweb'
+  // });
+  
+  // connection.connect();
+  
+  // connection.query('SHOW DATABASES;', function (error, results, fields) {
+  //   if (error) throw error;
+  //   console.log('The solution is: ', results[0].solution);
+  // });
+
+
   var cameras = [
     {"name":"东门","ip":"192.168.233.233","status":"完全毁坏"},
     {"name":"北门","ip":"192.168.404.404","status":"好的不行"},
