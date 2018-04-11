@@ -1,0 +1,9 @@
+CREATE TABLE camera
+(
+cam_id int primary key auto_increment,
+ip char(18),
+status char(3),
+name varchar(255)
+);
+
+insert into camera values(null , '192.168.1.1' ,'111' ,'东门');
