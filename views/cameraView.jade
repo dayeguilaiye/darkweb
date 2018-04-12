@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(href="stylesheets/bootstrap.min.css", rel="stylesheet")
+        title Camera View
+    body
+        canvas(id="video-canvas" style="display: block")
+            
+
+    script(src="javascripts/jquery.min.js")
+    script(src="javascripts/bootstrap.min.js")
+    script(src="javascripts/jsmpeg.min.js")
+    script.
+        //- 获取url中的参数
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+
+
+        var canvas = document.getElementById('video-canvas');
+        var url = 'ws://' + GetQueryString('ip') + ':8084/';
+        console.log(url);
+        var player = new JSMpeg.Player(url, { canvas: canvas });
+        Renderer.resize(500, 500)
+      
