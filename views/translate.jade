@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Document
+    body
+        textarea(id="text", cols="90", rows="50", style="float:left")
+        input(id="submit", type="submit", value="上传", style="float:left")
+        textarea(id="answer", cols="90", rows="50", style="float:left")
+
+    script(src="javascripts/jquery.min.js")
+    script.
+        $("#submit").click(function(){
+            var text = {'text':$("#text").val()};
+            $.post(
+                "trans",
+                text,
+                function(data){
+                    console.log(data)
+                    $("#answer").val(data)
+                });
+        });
+        
+        

@@ -16,6 +16,17 @@ router.get('/upload', function (req, res, next) {
   res.render("upload");
 });
 
+router.get('/translate', function (req, res, next) {
+  res.render("translate");
+});
+
+router.post('/trans', function (req, res, next) {
+  console.log(req.body)
+  text = req.body.text.replace(/[\r|\n]/g, ' ');
+  console.log(text)
+  res.send(text)
+});
+
 //获取摄像头状态列表
 router.get('/cameraList', function (req, res, next) {
 
